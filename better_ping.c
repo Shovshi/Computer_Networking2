@@ -59,10 +59,7 @@
         char *args[2];
         args[0]="./watchdog";
         args[1]=NULL;
-        int status;
         int pid = fork();
-        printf("%d\n", pid);
-
         if (pid == 0)
         {
           //  printf("%d\n", pid);
@@ -235,7 +232,6 @@
                     {
                         // Check the IP header
                         struct iphdr *iphdr = (struct iphdr *)packet;
-                        struct icmphdr *icmphdr = (struct icmphdr *)(packet + (iphdr->ihl * 4));
                         printf("%ld bytes from %s\n", bytes_received, inet_ntoa(dest_in.sin_addr));
                         char sourceIPAddrReadable[32] = { '\0' };
                         inet_ntop(AF_INET, &iphdr->saddr, sourceIPAddrReadable, sizeof(sourceIPAddrReadable));
