@@ -8,7 +8,6 @@
 #include <unistd.h>
 #include <sys/time.h>
 #include <time.h>
-#include <mqueue.h>
 #include <signal.h>
 
 #define SERVER_PORT 3000
@@ -124,8 +123,6 @@ int main ()
         {
             seconds = 0;
         }
-
-        
     }
 
     // if we reach here we need to close the sockets and kill the parent process 

@@ -253,7 +253,7 @@
         
 
             
-
+            sleep(1);
             char reply[IP_MAXPACKET];
             memcpy(reply, packet + ICMP_HDRLEN + IP4_HDRLEN, datalen);
             // printf("ICMP reply: %s \n", reply);
